@@ -34,7 +34,6 @@ namespace MegaDesk_Tinker
 
         public Desk()
         {
-
         }
 
         public enum Material

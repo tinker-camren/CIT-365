@@ -43,7 +43,12 @@ namespace MegaDesk_Tinker
             {
                 e.Cancel = !Validate(widthBox.Text, "double", "width");
                 MessageBox.Show("Invalid input for width. Please make sure the width is between " + Desk.MIN_WIDTH + " and " + Desk.MAX_WIDTH, "Invalid Width");
+                widthBox.BackColor = Color.LightPink;
                 widthBox.Focus();
+            } 
+            else
+            {
+                widthBox.BackColor = System.Drawing.SystemColors.Window;
             }
         }
 
@@ -53,7 +58,12 @@ namespace MegaDesk_Tinker
             {
                 e.Cancel = !Validate(heightBox.Text, "double", "height");
                 MessageBox.Show("Invalid input for height. Please make sure the width is between " + Desk.MIN_HEIGHT + " and " + Desk.MAX_HEIGHT, "Invalid Height");
+                heightBox.BackColor = Color.LightPink;
                 heightBox.Focus();
+            }
+            else
+            {
+                heightBox.BackColor = System.Drawing.SystemColors.Window;
             }
         }
 
@@ -63,7 +73,12 @@ namespace MegaDesk_Tinker
             {
                 e.Cancel = !Validate(depthBox.Text, "double", "depth");
                 MessageBox.Show("Invalid input for depth. Please make sure the width is between " + Desk.MIN_DEPTH + " and " + Desk.MAX_DEPTH, "Invalid Depth");
+                depthBox.BackColor = Color.LightPink;
                 depthBox.Focus();
+            }
+            else
+            {
+                depthBox.BackColor = System.Drawing.SystemColors.Window;
             }
         }
         private void drawerBox_Validating(object sender, CancelEventArgs e)
@@ -72,7 +87,12 @@ namespace MegaDesk_Tinker
             {
                 e.Cancel = !Validate(drawerBox.Text, "double", "drawers");
                 MessageBox.Show("Invalid input for drawers. Please make sure the number of drawers is between " + Desk.MIN_DRAWERS + " and " + Desk.MAX_DRAWERS, "Invalid Number of Drawers");
+                drawerBox.BackColor = Color.LightPink;
                 drawerBox.Focus();
+            }
+            else
+            {
+                drawerBox.BackColor = System.Drawing.SystemColors.Window;
             }
         }
 
