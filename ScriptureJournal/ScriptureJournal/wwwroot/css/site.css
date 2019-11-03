@@ -38,7 +38,7 @@ html {
     }
     main {
         background-color: rgba(255, 255, 255, 0.9);
-        padding: 1em, 5em, 2em, 5em;
+        padding: 1em 5em 2em 5em;
     }
 }
 
@@ -84,7 +84,7 @@ header {
     background-color: #2e2727;
 }
 main {
-    padding: 1em, 5em, 2em, 5em;
+    padding: 1em 5em 2em 5em;
 }
 
 section {
