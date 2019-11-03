@@ -1,0 +1,84 @@
+﻿@page
+@model ScriptureJournal.Pages.Entries.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <section class="container">
+        <h1 class="row mx-auto">Index</h1>
+
+        <p class="row mx-auto">
+            <a asp-page="Create">Create New</a>
+        </p>
+
+        <div class="row">
+            <form class="p-1">
+                <p>
+                    Search by Note or Book: <input type="text" asp-for="SearchString" />
+                    <select asp-for="ScriptureBook" asp-items="Model.Books">
+                        <option value="">All</option>
+                    </select>
+                    <input type="submit" value="Filter" />
+                </p>
+            </form>
+        </div>
+        
+    </section>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Title)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Entry[0].Book)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Chapter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Verse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Note)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Entry[0].DateAdded)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chapter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verse)
+            </td>
+            <td class="scrip-note">
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
